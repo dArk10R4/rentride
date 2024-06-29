@@ -25,11 +25,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'app',
+    'cart',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -67,7 +70,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cycle_rent',
         'USER': 'root',
-        'PASSWORD': '11112002Vasifwww@',
+        'PASSWORD': 'Nihad.123',
         'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {
@@ -132,4 +135,16 @@ MESSAGE_TAGS = {
 
 
 
+STRIPE_PUBLIC_KEY = "pk_test_51LiZ1zAua664zHhP11i6ZioxLwd37w1HIhFC6OGZ5Obz14tE5eh1wJTJ7CeaVLv4QiY3sexkIO9QPc7SXapiuTc500xIVaMNpd",
+STRIPE_SECRET_KEY = "sk_test_51LiZ1zAua664zHhPHjozcRjUO75gbmpSzZCOmcCMxx6xhCx2UVHwHCFaKae7rhcjOy3Fc97q3kxGIHLAOGfpV52N00Gvu9QADI"
 
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
